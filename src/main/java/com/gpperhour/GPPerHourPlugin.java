@@ -125,6 +125,7 @@ public class GPPerHourPlugin extends Plugin
 	static final int NO_PROFIT_LOSS_TIME = -1;
 	static final int RUNEPOUCH_ITEM_ID = 12791;
 	static final int DIVINE_RUNEPOUCH_ITEM_ID = 27281;
+	static final int LOCKED_DIVINE_RUNEPOUCH_ITEM_ID = 27509;
 	public static final float roundAmount = 0.01f;
 
     // static item prices so that when ItemManager updates, the Profit / Loss value doesn't all of a sudden change
@@ -1051,7 +1052,7 @@ public class GPPerHourPlugin extends Plugin
 				
 			qtyMap.merge(itemId, (float) containerItems[i].getQuantity(), Float::sum);
 
-			if (itemId == RUNEPOUCH_ITEM_ID || itemId == DIVINE_RUNEPOUCH_ITEM_ID)
+			if (itemId == RUNEPOUCH_ITEM_ID || itemId == DIVINE_RUNEPOUCH_ITEM_ID || itemId == LOCKED_DIVINE_RUNEPOUCH_ITEM_ID)
 			{
 				addRunepouchContents(qtyMap);
 			}
